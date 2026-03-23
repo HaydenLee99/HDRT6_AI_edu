@@ -1,7 +1,9 @@
 # 내가 설정한거
 .vscode/
-clock.py
 *.zip
+
+clock.py
+cote.py
 
 # Created by https://www.toptal.com/developers/gitignore/api/windows,python,c
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,python,c
