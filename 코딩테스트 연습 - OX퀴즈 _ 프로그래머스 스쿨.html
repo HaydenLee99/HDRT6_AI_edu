@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)https://school.programmers.co.kr/learn/courses/30/lessons/120907 -->
+<html lang="ko" xml:lang="ko" xmlns="http://www.w3.org/1999/xhtml" class="" translate=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="코딩테스트 연습 - OX퀴즈">
+<meta name="og:title" property="og:title" itemprop="title name" content="코딩테스트 연습 - OX퀴즈">
+<meta name="twitter:description" property="og:description" itemprop="description" content="알고리즘 문제 연습 카카오톡 친구해요! 프로그래머스 교육 카카오 채널을 만들었어요. 여기를 눌러, 친구 추가를 해주세요. 신규 교육 과정 소식은 물론 다양한 이벤트 소식을 가장 먼저 알려드립니다.">
+<meta name="og:description" property="og:description" itemprop="description" content="알고리즘 문제 연습 카카오톡 친구해요! 프로그래머스 교육 카카오 채널을 만들었어요. 여기를 눌러, 친구 추가를 해주세요. 신규 교육 과정 소식은 물론 다양한 이벤트 소식을 가장 먼저 알려드립니다.">
+<meta name="twitter:image" property="og:image" itemprop="image primaryImageOfPage" content="https://image.freepik.com/free-vector/landing-page-template-for-a-website_23-2147782747.jpg">
+<meta name="og:image" property="og:image" itemprop="image primaryImageOfPage" content="https://image.freepik.com/free-vector/landing-page-template-for-a-website_23-2147782747.jpg">
+<meta name="twitter:url" property="og:url" content="https://programmers.co.kr/">
+<meta name="og:url" property="og:url" content="https://programmers.co.kr/">
+
+<title>코딩테스트 연습 - OX퀴즈 | 프로그래머스 스쿨</title>
+<link rel="shortcut icon" type="image/x-icon" href="https://school.programmers.co.kr/assets/icons/favicon-ec61d910396b5fc4d7418ea44281693172c34e31d437d074f9ab5470523990fb.png">
+<link rel="apple-touch-icon" type="image/png" href="https://school.programmers.co.kr/assets/icons/apple-icon-8a32ac937e12475676c7102e99d34b7f908b3d1ac048d6eed0712ad111bfdd01.png">
+<meta name="description" content="알고리즘 문제 연습 카카오톡 친구해요! 프로그래머스 교육 카카오 채널을 만들었어요. 여기를 눌러, 친구 추가를 해주세요. 신규 교육 과정 소식은 물론 다양한 이벤트 소식을 가장 먼저 알려드립니다.">
+<meta name="keywords" content="코딩 교육, 코딩, 프로그래밍, 실습, 생활코딩, 알고리즘, python3, 영상/실습 강의, 추천 강의">
+<meta property="fb:app_id" content="339079816467879">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="프로그래머스 스쿨">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="image" content="https://image.freepik.com/free-vector/landing-page-template-for-a-website_23-2147782747.jpg">
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="RFFFAAhpvP3VEZz4N9OUMxzx5ThNbCSuucbzaXgl38J3mxFE_zyyr_7uEtxOW35aaX7B8fWeVaPbbUsYQhngNg">
+<meta name="action-cable-url" content="wss://ws.programmers.co.kr:443/cable">
+<script async="" src="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/clarity.js.다운로드"></script><script type="text/javascript" async="" src="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/js"></script><script src="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/2050250308523590" async=""></script><script async="" src="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/fbevents.js.다운로드"></script><script type="text/javascript" async="" src="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/bnbjbxy3m1"></script><script type="text/javascript" async="" src="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/analytics.js.다운로드"></script><script type="text/javascript" async="" src="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/js(1)"></script><script async="" src="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/gtm.js.다운로드"></script><script type="text/javascript" charset="utf-8">
+  window.__env__ = {
+  STAGE: 'production',
+  SITE: 'programmers',
+  SENTRY_DSN: 'https://96f9fc1ff3f44acbb98a9c156338d14b@o1070092.ingest.sentry.io/6136918',
+  HACKLE_BROWSER_KEY: 'OKQUz9iLXiTPyzwOAyq44sT4uwMqfCzz',
+  HACKLE_EVENT_SERVER_INIT: true, // 핵클 초기화 코드 이전을 위한 임시 플래그 배포 후 삭제 예정
+  HERA_CLIENT_HOST: 'https://hera-client.grepp.co',
+  PROGRAMMERS_HOST: 'programmers.co.kr',
+  BUSINESS_HOST: 'business.programmers.co.kr',
+  SCHOOL_HOST: 'school.programmers.co.kr',
+  INSTRUCTOR_SCHOOL_HOST: 'instructor.school.programmers.co.kr',
+  CAMPUS_HOST: 'campus.programmers.co.kr',
+  PROGRAMMERS_WS_HOST: 'ws.programmers.co.kr',
+  COMMUNITY_HOST: 'community.programmers.co.kr',
+  QNA_HOST: 'qna.programmers.co.kr',
+  IS_PROGRAMMERS_APP_REQUEST: false,
+};
+
+</script>
+  <script id="__hackle-init-info" data-user-id="914094" data-internal-account="false"></script>
+<script src="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/hackle_event_initializer-2decc783baaed7cdfba6b3ba315d282eaf5eb75f3565979fc7d54934bef78a4f.js.다운로드"></script>
+
+
+
+
+  <link rel="stylesheet" href="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/library-05704bb25291ce17972d22267cf938317aa9808756330022d3fa676cf1e0ced1.css" media="all" debug="false">
+  <link rel="stylesheet" href="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/application-c69a341762d19b1f1da5172f626addd4b1161e1abb7bbfe2e84a57505c53e669.css" media="all">
+  <link rel="stylesheet" href="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/school-79ffc0a54d53e0cef48a66b3a7e9850fe450b9d18b77ccec8587d4c7a8857b77.css" media="all">
+
+<meta name="google-site-verification" content="Z9qZz155KQLu77llc1wF4LlccJE88dymkeGyw1I62JY">
+
+
+
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+     user_id: '914094',
+    });
+  </script>
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+  w[l] = w[l] || [];
+  w[l].push({
+    'gtm.start':
+      new Date().getTime(), event: 'gtm.js'
+  });
+  var f = d.getElementsByTagName(s)[0],
+    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+  j.async = true;
+  j.src =
+    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+  f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-NT8HLJD');</script>
+<!-- End Google Tag Manager -->
+
+
+<link rel="stylesheet" type="text/css" href="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/2b96950d7838a767ad1b.css"><link rel="stylesheet" type="text/css" href="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/e68bfe5b12b12d5d7f4f.css"><link rel="stylesheet" type="text/css" href="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/6b8c31461c042fc88087.css"><link rel="stylesheet" type="text/css" href="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/2ba46fcb08aa2cf0a735.css"><script type="text/javascript" async="" src="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/synchronizer.js.다운로드"></script><style data-styled="active" data-styled-version="5.3.11"></style><link rel="stylesheet" type="text/css" href="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/04bd7a95ff2074bb0714.css"></head>
+<body class="learn-lessons learn-lessons-show learn-lesson-with-right-sidebar " data-ns="Learn" data-controller="lessons" data-action="show" data-defaultlocale="ko" data-locale="ko" data-signed-in="true" data-hackle-event-bounded="true">
+
+
+
+  <div class="navbar navbar-dark navbar-expand-lg navbar-application navbar-breadcrumb">
+    <a class="navbar-brand" href="https://school.programmers.co.kr/">
+      <img alt="logo" width="24" src="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/bi-symbol-light-4a9edc980025418d6883d7519df4acf2b6c65f068508931dff0881d1c5ad4721.png">
+</a>  <ol class="breadcrumb"><li><a href="https://school.programmers.co.kr/learn/challenges">코딩테스트 연습</a></li><li><a href="https://school.programmers.co.kr/learn/challenges/beginner">코딩테스트 입문</a></li><li class="active">OX퀴즈</li></ol>
+
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item"><a onclick="Learn.lessons.challengeable.startTour(true)" class="nav-link" id="help" href="https://school.programmers.co.kr/learn/courses/30/lessons/120907#">도움말</a></li>
+        <li class="nav-item"><a class="nav-link" data-remote="true" href="https://school.programmers.co.kr/compile_options">컴파일 옵션</a></li>
+      </ul>
+    </div>
+</div>
+
+
+
+<div class="main theme-light">
+  
+<script src="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/96ba404e5e08424a03e6.js.다운로드" defer="defer"></script>
+
+
+  <div class="tryout-challenges-wrapper">
+    <div class="lesson-content" data-course-slug="코딩테스트-연습" data-course-id="30" data-lesson-id="120907" data-lesson-type="Challenge" data-lesson-title="OX퀴즈" data-lesson-ai-commentable="false" data-challenge-level="0" data-challenge-category="algorithm" data-course-category="open_challenge" data-next-lesson-id="">
+
+      
+
+<div class="challenge-nav nav nav-tabs nav-tabs-dark task-tab" id="tab" role="tablist">
+  <div class="challenge-nav-left-menu">
+      <div class="algorithm-bookmarks" data-bookmarked="false">
+        <div id="challenge-bookmark-delete" class="icon-bookmark challenge-bookmark hidden disabled" data-user-signed-in="true" data-lesson-id="120907" data-bookmarked="true" data-toggle="tooltip" data-placement="top" data-original-title="즐겨찾기 해제" data-hackle-value="{&quot;key&quot;:&quot;open_challenge_lesson_bookmark_clicked&quot;,&quot;properties&quot;:{&quot;course_id&quot;:30,&quot;lesson_id&quot;:120907,&quot;bookmarked&quot;:false}}">
+          <svg class="ic-bookmark ic-24"><use xlink:href="/assets/svg-defs-6905fdf303bc73e2fda0aab4ba894b1327e4957a5734eab41b21e85bd64c8267.svg#ic-bookmark"></use></svg>
+          <div class="hover-bg"></div>
+        </div>
+        <div id="challenge-bookmark" class="icon-bookmark challenge-bookmark" data-user-signed-in="true" data-lesson-id="120907" data-bookmarked="false" data-toggle="tooltip" data-placement="top" data-original-title="즐겨찾기 추가" data-hackle-value="{&quot;key&quot;:&quot;open_challenge_lesson_bookmark_clicked&quot;,&quot;properties&quot;:{&quot;course_id&quot;:30,&quot;lesson_id&quot;:120907,&quot;bookmarked&quot;:true}}">
+          <svg class="ic-bookmark-border ic-24 icon-bookmark"><use xlink:href="/assets/svg-defs-6905fdf303bc73e2fda0aab4ba894b1327e4957a5734eab41b21e85bd64c8267.svg#ic-bookmark-border"></use></svg>
+          <div class="hover-bg"></div>
+        </div>
+      </div>
+
+      <div class="challenge-item-list open-challenge nav-item-list nav nav-tabs nav-tabs-dark task-tab">
+        <div class="nav-item algorithm-nav-link algorithm-title active" data-toggle="tab" aria-expanded="true" role="tab" href="#tour2">
+          <span class="challenge-title">OX퀴즈</span>
+        </div>
+        <div class="nav-item submission-history-title" href="#submissionHistory" data-toggle="tab" aria-expanded="true" role="tab" data-hackle-value="{&quot;key&quot;:&quot;open_challenge_lesson_submission_history_tab_clicked&quot;,&quot;properties&quot;:{&quot;course_id&quot;:30,&quot;lesson_id&quot;:120907}}">
+          <span>
+            제출 내역
+          </span>
+        </div>
+      </div>
+  </div>
+
+  <div class="challenge-nav-right-menu">
+    
+<div class="challenge-settings nav-item">
+
+      <div data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="코드 에디터의 단축키를 설정하는 옵션입니다. 선호하는 에디터 옵션이 없다면 sublime을 선택해주세요." data-original-title="" title="">
+        <div class="btn-group-keymap btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-sm active btn-outline-light">
+              <input type="radio" name="keymaps" autocomplete="off" checked="" data-keymap="sublime">sublime
+            </label>
+            <label class="btn btn-sm btn-outline-light">
+              <input type="radio" name="keymaps" autocomplete="off" data-keymap="vim">vim
+            </label>
+            <label class="btn btn-sm btn-outline-light">
+              <input type="radio" name="keymaps" autocomplete="off" data-keymap="emacs">emacs
+            </label>
+        </div>
+      </div>
+
+    <div class="dropdown-language" id="tour7">
+      <button class="btn btn-sm dropdown-toggle btn-light" type="button" data-toggle="dropdown">
+        Python3
+      </button>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="https://school.programmers.co.kr/learn/courses/30/lessons/120907?language=c">C</a>
+            <a class="dropdown-item" href="https://school.programmers.co.kr/learn/courses/30/lessons/120907?language=cpp">C++</a>
+            <a class="dropdown-item" href="https://school.programmers.co.kr/learn/courses/30/lessons/120907?language=csharp">C#</a>
+            <a class="dropdown-item" href="https://school.programmers.co.kr/learn/courses/30/lessons/120907?language=go">Go</a>
+            <a class="dropdown-item" href="https://school.programmers.co.kr/learn/courses/30/lessons/120907?language=java">Java</a>
+            <a class="dropdown-item" href="https://school.programmers.co.kr/learn/courses/30/lessons/120907?language=javascript">JavaScript</a>
+            <a class="dropdown-item" href="https://school.programmers.co.kr/learn/courses/30/lessons/120907?language=kotlin">Kotlin</a>
+            <a class="dropdown-item" href="https://school.programmers.co.kr/learn/courses/30/lessons/120907?language=python3">Python3</a>
+            <a class="dropdown-item" href="https://school.programmers.co.kr/learn/courses/30/lessons/120907?language=ruby">Ruby</a>
+            <a class="dropdown-item" href="https://school.programmers.co.kr/learn/courses/30/lessons/120907?language=scala">Scala</a>
+            <a class="dropdown-item" href="https://school.programmers.co.kr/learn/courses/30/lessons/120907?language=swift">Swift</a>
+        </div>
+    </div>
+
+
+  <div class="connection-box connection-status js-connection-status-alert connected">
+    <svg class="ic-18"><use xlink:href="/assets/svg-defs-6905fdf303bc73e2fda0aab4ba894b1327e4957a5734eab41b21e85bd64c8267.svg#ic-power-off"></use></svg>
+    <span class="connection-status-txt">네트워크 연결 끊김</span>
+  </div>
+</div>
+
+  </div>
+</div>
+
+<div class="challenge-content lesson-algorithm-main-section " data-challengeable-id="14742" data-challengeable-type="algorithm" data-algorithm-type="standard" data-language="python3" data-user-id="914094" data-interface-type="function" data-lesson-comment-activation-score="30" data-is-lesson="true">
+    <div></div>
+    
+
+<div class="main-section tab-content">
+  <div class="guide-section" style="width: calc(40% - 12px);">
+    <div class="tab-pane fade active show" id="tour2">
+      <div class="guide-section-description">
+        <h6 class="guide-section-title">문제 설명</h6>
+        <div class="markdown solarized-dark"><p>덧셈, 뺄셈 수식들이 'X [연산자] Y = Z' 형태로 들어있는 문자열 배열 <code>quiz</code>가 매개변수로 주어집니다. 수식이 옳다면 "O"를 틀리다면 "X"를 순서대로 담은 배열을 return하도록 solution 함수를 완성해주세요.</p>
+
+<hr>
+
+<h5>제한사항</h5>
+
+<ul>
+<li>연산 기호와 숫자 사이는 항상 하나의 공백이 존재합니다. 단 음수를 표시하는 마이너스 기호와 숫자 사이에는 공백이 존재하지 않습니다.</li>
+<li>1 ≤ <code>quiz</code>의 길이 ≤ 10</li>
+<li>X, Y, Z는 각각 0부터 9까지 숫자로 이루어진 정수를 의미하며, 각 숫자의 맨 앞에 마이너스 기호가 하나 있을 수 있고 이는 음수를 의미합니다.</li>
+<li>X, Y, Z는 0을 제외하고는 0으로 시작하지 않습니다.</li>
+<li>-10,000 ≤ X, Y ≤ 10,000</li>
+<li>-20,000 ≤ Z ≤ 20,000</li>
+<li>[연산자]는 + 와 - 중 하나입니다.</li>
+</ul>
+
+<hr>
+
+<h5>입출력 예</h5>
+<table class="table">
+        <thead><tr>
+<th>quiz</th>
+<th>result</th>
+</tr>
+</thead>
+        <tbody><tr>
+<td>["3 - 4 = -3", "5 + 6 = 11"]</td>
+<td>["X", "O"]</td>
+</tr>
+<tr>
+<td>["19 - 6 = 13", "5 + 66 = 71", "5 - 15 = 63", "3 - 1 = 2"]</td>
+<td>["O", "O", "X", "O"]</td>
+</tr>
+</tbody>
+      </table>
+<hr>
+
+<h5>입출력 예 설명</h5>
+
+<p>입출력 예 #1</p>
+
+<ul>
+<li>3 - 4 = -3 은 틀린 수식이므로 "X", 5 + 6 = 11 은 옳은 수식이므로 "O" 입니다. 따라서 ["X", "O"]를 return합니다.</li>
+</ul>
+
+<p>입출력 예 #2</p>
+
+<ul>
+<li>19 - 6 = 13 은 옳은 수식이므로 "O", 5 + 66 = 71 은 옳은 수식이므로 "O", 5 - 15 = 63 은 틀린 수식이므로 "X", 3 - 1 = 2는 옳은 수식이므로 "O" 따라서 ["O", "O", "X", "O"]를 return합니다.</li>
+</ul>
+</div>
+      </div>
+    </div>
+
+
+      <div class="submission-history-list-section tab-pane fade" id="submissionHistory">
+        <div class="submission-history-wrapper">
+
+
+  <div data-challengeable-submission-history-component="submission-history" data-user-id="914094" data-lesson-id="120907" data-current-theme="light" data-webapp="true" style="width: 100%; height: 100%;"><div class="SubmissionHistorystyle__Container-sc-topbuc-0 cBfbrE theme-light"><div class="SubmissionHistorystyle__ListLayout-sc-topbuc-1 kUgbnd"><div class="Headerstyle__Container-sc-xey78k-0 jXBvhh"><div class="Headerstyle__TotalSubmissionCount-sc-xey78k-1 jXcjGi">0개의 제출</div><div class="Headerstyle__RefreshButton-sc-xey78k-4 bxRQzJ theme-light" data-hackle-value="{&quot;key&quot;:&quot;open_challenge_lesson_submission_history_refresh_clicked&quot;,&quot;properties&quot;:{&quot;total_entries&quot;:0,&quot;lesson_id&quot;:120907}}"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="Headerstyle__RefreshIcon-sc-xey78k-2 bxmpYS"><path fill-rule="evenodd" clip-rule="evenodd" d="M19 8L15 12H18C18 15.31 15.31 18 12 18C10.99 18 10.03 17.75 9.2 17.3L7.74 18.76C8.97 19.54 10.43 20 12 20C16.42 20 20 16.42 20 12H23L19 8ZM6 12C6 8.69 8.69 6 12 6C13.01 6 13.97 6.25 14.8 6.7L16.26 5.24C15.03 4.46 13.57 4 12 4C7.58 4 4 7.58 4 12H1L5 16L9 12H6Z" fill="black"></path></svg><span class="Headerstyle__RefreshText-sc-xey78k-3 kkDrMQ">새로고침</span></div></div><div class="SubmissionListstyle__CenterLayout-sc-dysuo0-0 dJaWUi"><div class="SubmissionListstyle__NoSubmissionText-sc-dysuo0-1 jXZSoA">제출 내역이 없습니다</div></div></div></div></div>
+  <script src="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/269c0e1cc4ea037ef673.js.다운로드" defer="defer"></script>
+</div>
+
+      </div>
+  </div>
+
+  <div class="gutter gutter-horizontal" style="width: 24px; background-image: url(&quot;/assets/img-grippie-vertical-cd0206a7a3122deb89a192c09ca241e8614c02e38b4f47ffb3af1a2e5246b85f.png&quot;);"></div><div class="run-section" style="width: calc(60% - 12px);">
+    <div id="tour3" class="code-section" onkeyup="Hera.tryoutChallenges.resizeEditor(this);" style="height: calc(60% - 7px);">
+      <div class="editor">
+        <ul class="nav nav-pills editor-nav-pills tap-form">
+    <input type="hidden" name="initial_code_50563" id="initial_code_50563" value="def solution(quiz):
+    answer = []
+    return answer" autocomplete="off">
+    <input id="50563" data-type="code" data-language="python3" type="hidden" value="def solution(quiz):
+    answer = []
+    return answer">
+    <li class="nav-item">
+      <a href="https://school.programmers.co.kr/learn/courses/30/lessons/120907#" class="btn-tab nav-link active" data-id="50563" data-language="python3">
+        solution.py </a>
+    </li>
+</ul>
+        
+          <textarea hidden="" id="code" name="code" style="display: none;">def solution(quiz):
+    answer = []
+    return answer</textarea><div class="CodeMirror cm-s-eclipse CodeMirror-wrap" translate="no"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 42.3906px; left: 241.078px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; min-height: 1em; outline: none;"></textarea></div><div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 48px; margin-bottom: -8px; border-right-width: 42px; min-height: 98px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre class="CodeMirror-line-like"><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors" style=""><div class="CodeMirror-cursor" style="left: 193.078px; top: 22.3906px; height: 22.3906px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation"><div style="position: relative;" class=""><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -48px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">def</span> <span class="cm-def">solution</span>(<span class="cm-variable">quiz</span>):</span></pre></div><div style="position: relative;" class="CodeMirror-activeline"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -48px; width: 48px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" aria-hidden="true" style="left: -48px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">answer</span> <span class="cm-operator">=</span> <span class="cm-variable">quiz</span>[<span class="cm-number">0</span>].<span class="cm-property">split</span>(<span class="cm-string">'='</span>)</span></pre></div><div class="" style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -48px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">answer</span> <span class="cm-operator">=</span> [<span class="cm-string">"O"</span> <span class="cm-keyword">if</span> <span class="cm-builtin">eval</span>(<span class="cm-variable">answer</span>[<span class="cm-number">0</span>]) <span class="cm-operator">==</span> <span class="cm-builtin">int</span>(<span class="cm-variable">answer</span>[<span class="cm-number">1</span>]) <span class="cm-keyword">else</span> <span class="cm-string">"X"</span>]</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -48px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">answer</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 42px; width: 1px; border-bottom: 0px solid transparent; top: 98px;"></div><div class="CodeMirror-gutters" style="height: 140px; left: 0px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 48px;"></div></div></div></div>
+      </div>
+    </div>
+
+    <div class="gutter gutter-vertical" style="height: 14px; background-image: url(&quot;/assets/img-grippie-horizon-2029be95ca34dfe8c756d091c6f53a6a007e3a66c7c68863ce6f54fe23d4f371.png&quot;);"></div><div class="output-section" id="tour6" style="height: calc(40% - 7px);">
+      <div class="tab-header">
+          <div id="output-title" class="output-title output-only active failed" data-toggle="tab">
+            <span class="connection-status connected" data-container="body" data-toggle="popover" data-placement="top" title="" data-html="true" data-content="
+                    &lt;h6&gt;네트워크가 불안정하여 서버와의 연결이 끊어졌습니다.
+                    페이지 새로고침을 하거나 네트워크가 안정적이 되면 자동으로 재 연결됩니다.&lt;/h6&gt;
+                    &lt;h6 style=&#39;margin-top: 4px;&#39;&gt;네트워크가 정상임에도 계속해서 연결이 끊어진 상태가 지속된다면 네트워크 방화벽 문제일 수 있습니다.
+                    모바일 테더링 등 다른 네트워크를 통해 테스트에 접속해 보세요.&lt;/h6&gt;" data-original-title="서버와의 연결 끊김">
+              <svg class="ic-24"><use xlink:href="/assets/svg-defs-6905fdf303bc73e2fda0aab4ba894b1327e4957a5734eab41b21e85bd64c8267.svg#ic-power-off"></use></svg>
+            </span>
+
+            실행 결과
+              <a id="stop-button" class="btn btn-sm btn-danger" href="https://school.programmers.co.kr/learn/courses/30/lessons/120907#" style="display: none;">실행 중지</a>
+            <span id="output-spinner" class="spinner hidden">
+              <span class="bounce1"></span>
+              <span class="bounce2"></span>
+              <span class="bounce3"></span>
+            </span>
+          </div>
+      </div>
+
+      <div class="console tab-content">
+          <div id="output" class="console-output tab-pane fade in active show banner">
+            <div id="output-wrapper"><pre class="console-content"><div></div><table class="console-testcase" data-index="0">
+  <tbody><tr><td colspan="2">테스트 1</td></tr>
+  <tr>
+  <td class="td-label" align="right">입력값 <span>〉</span></td>
+  <td class="input">["3 - 4 = -3", "5 + 6 = 11"]</td>
+</tr>
+  <tr>
+  <td class="td-label" align="right">기댓값 <span>〉</span></td>
+  <td class="output">["X", "O"]</td>
+</tr>
+  <tr>
+    <td class="td-label" align="right" valign="top">실행 결과 <span>〉</span></td>
+    <td class="result failed">실행한 결괏값 ["X"]이 기댓값 ["X","O"]과 다릅니다.</td>
+  </tr>
+  <tr style="display:none">
+    <td class="td-label" align="right" valign="top">출력 <span>〉</span></td>
+    <td class="stdout"></td>
+  </tr>
+</tbody></table><table class="console-testcase" data-index="1">
+  <tbody><tr><td colspan="2">테스트 2</td></tr>
+  <tr>
+  <td class="td-label" align="right">입력값 <span>〉</span></td>
+  <td class="input">["19 - 6 = 13", "5 + 66 = 71", "5 - 15 = 63", "3 - 1 = 2"]</td>
+</tr>
+  <tr>
+  <td class="td-label" align="right">기댓값 <span>〉</span></td>
+  <td class="output">["O", "O", "X", "O"]</td>
+</tr>
+  <tr>
+    <td class="td-label" align="right" valign="top">실행 결과 <span>〉</span></td>
+    <td class="result failed">실행한 결괏값 ["O"]이 기댓값 ["O","O","X","O"]과 다릅니다.</td>
+  </tr>
+  <tr style="display:none">
+    <td class="td-label" align="right" valign="top">출력 <span>〉</span></td>
+    <td class="stdout"></td>
+  </tr>
+</tbody></table><div class="console-heading">테스트 결과 (~˘▾˘)~</div><div class="console-failed">2개 중 0개 성공</div></pre></div>
+              
+
+
+
+  <div class="challengeable-banner-wrapper result-banner" style="position:relative;width:100%;margin-bottom: 21px;">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSelyG0HN12nV9kfTCOvfX1uPYhshX7hSKOiAB2ZNRaRrLifsw/viewform" target="_blank" style="width:100%;display:flex;justify-content:center;" data-hackle-value="{&quot;key&quot;:&quot;school_challenge_coderun_banner_clicked&quot;,&quot;properties&quot;:{&quot;course_id&quot;:30,&quot;lesson_id&quot;:120907,&quot;banner_id&quot;:10864,&quot;challenge_title&quot;:&quot;OX퀴즈&quot;,&quot;challenge_level&quot;:0,&quot;challenge_category&quot;:&quot;algorithm&quot;}}">
+      <img src="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/PRGMS-CONSULTING-EVENT-coding-test-tablet_screen_1456x180_.jpg" alt="프로그래머스 K-Digital Training" style="width:100%; max-width:728px;">
+    </a>
+  </div>
+
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="button-section">
+  <div class="testcase-button">
+      <a id="btn-show-question" class="btn btn-light" href="https://school.programmers.co.kr/learn/courses/30/lessons/120907/questions">질문하기 (22)</a>
+        <a class="btn btn-block btn-light" data-remote="true" href="https://school.programmers.co.kr/challenge_algorithms/14742/custom_testcases?lesson_id=120907">
+          테스트 케이스 추가하기
+</a>  </div>
+
+  <div class="func-buttons">
+      <a id="view-solution-group" class="btn btn-svg btn-light" data-remote="true" href="https://school.programmers.co.kr/learn/courses/30/lessons/120907/solution_groups?language=python3">
+        <svg class="ic-24 ic-white"><use xlink:href="/assets/svg-defs-6905fdf303bc73e2fda0aab4ba894b1327e4957a5734eab41b21e85bd64c8267.svg#ic-lock-full"></use></svg> <span>다른 사람의 풀이</span>
+</a>
+      <a id="reset-code" class="btn btn-light" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="에디터의 코드가 초기화됩니다. 초기화 버튼을 누르기 이전 코드 복원하려면 코드 에디터에 커서를 두고 Ctrl-Z를 눌러 보세요." href="https://school.programmers.co.kr/learn/courses/30/lessons/120907#" data-original-title="" title="">초기화</a>
+      <div id="tour4" data-hackle-value="{&quot;key&quot;:&quot;school_challenge_coderun_clicked&quot;,&quot;properties&quot;:{&quot;course_id&quot;:30,&quot;lesson_id&quot;:120907,&quot;challenge_title&quot;:&quot;OX퀴즈&quot;,&quot;challenge_level&quot;:0,&quot;challenge_category&quot;:&quot;algorithm&quot;}}">
+        <button name="button" type="submit" id="run-code" class="btn btn-light" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="작성한 코드를 제출하기 전에 먼저 실행해볼 수 있습니다. 예시 테스트 케이스를 사용하며, [테스트 케이스 추가하기]를 눌러 원하는 테스트 케이스를 추가할 수 있습니다." data-original-title="" title="">코드 실행</button>
+      </div>
+
+      <div id="tour5">
+        <button name="button" type="submit" id="submit-code" class="btn btn-primary" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="시험 종료 전까지 언제든 다시 제출할 수 있으며, 제출한 코드 중 가장 높은 점수를 낸 코드가 최종 답안이 됩니다." data-original-title="" title="">제출 후 채점하기</button>
+      </div>
+  </div>
+</div>
+
+</div>
+
+    </div>
+  </div>
+
+  <script src="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/a734660dcdff1ad2e812.js.다운로드" defer="defer"></script>
+  <div id="edu-app-practice-sidebar" data-options="
+      {&quot;courseId&quot;:30,
+      &quot;lessonId&quot;:120907,
+      &quot;appearance&quot;:&quot;light&quot;
+            }" data-v-app=""><aside class="wsUIU95IZtV72wfQwpzt TkSwSvF5WyWmmubYI8TC"><button type="button" data-testid="sidebar-button-settings" class="j9zk9rQY0rAGOrGeUIff ntY0lArH9gWzAZSYxnpQ"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65A.49.49 0 0 0 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64zM12 16c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4" clip-rule="evenodd"></path></svg></button><div class="u2bsqEI6kBCw7ZfmCqQO"></div><!--v-if--></aside><!----><!--v-if--></div>
+
+</div>
+
+
+
+<div class="modal fade" id="modal-dialog" tabindex="-1" role="dialog" aria-hidden="true"></div>
+
+  <script src="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/library-2294c9b303c55c45f6252c1e5bbd2a8abbc0c74204dc9097eb6553ca14d905ce.js.다운로드" debug="false"></script><div class="tui-tooltip" style="display: none;"><div class="arrow"></div><span class="text"></span></div><div class="tui-tooltip" style="display: none;"><div class="arrow"></div><span class="text"></span></div>
+  <script>
+//<![CDATA[
+    I18n.defaultLocale = "ko";
+    I18n.locale = "ko";
+    I18n.fallbacks = true;
+
+//]]>
+</script>  <script src="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/application-d8cc02e12d02769ab97d24a63ea926fcf208bb6ca5f57f129d9ac3a754c1f7ce.js.다운로드"></script>
+
+<script>
+//<![CDATA[
+window.addEventListener('load', function() {});
+//]]>
+</script>
+  <script src="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/loader.js.다운로드" type="text/javascript"></script>
+  <script src="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/bundle.min.js.다운로드" integrity="sha384-QLRjp0fR75x7D0LjPI+SXePWP9XQ0m2EmTJkX3pjLU45zt9uU2FgmiiqnMGl9w/N" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    Sentry.init({
+      environment: "production",
+      dsn: "https://96f9fc1ff3f44acbb98a9c156338d14b@o1070092.ingest.sentry.io/6136918",
+      initialScope: {
+        code_version: "e1b3e667115b972a71ac512aa7f794989b666163",
+        user: {
+          id: 914094,
+          username: "h*****************m",
+          email: "ha*******@gmail.com"
+        },
+      },
+      // Set tracesSampleRate to 1.0 to capture 100%
+      // of transactions for performance monitoring.
+      // We recommend adjusting this value in production
+      beforeSend: function beforeSend(event) {
+        const firstException = (event.exception && event.exception.values || [])[0];
+
+        if (firstException) {
+          const mechanism = firstException.mechanism;
+          const stacktrace = firstException.stacktrace;
+          const value = firstException.value;
+
+          const isOnError = () => mechanism && mechanism.type === 'onerror';
+          const hasAnonymousFilename = () => Boolean(
+            stacktrace && stacktrace.frames && stacktrace.frames.some(
+              ({ filename }) => filename && filename.includes('anonymous'),
+            ),
+          );
+
+          const isIgnorableAgoraError = value?.includes('can not generate join message, no join info') || value?.includes('WS_ABORT');
+
+          /* console의 예외는 sentry에 보내지 않는다. #4226 */
+          if (isOnError() && hasAnonymousFilename())
+            return null;
+
+          if (isIgnorableAgoraError)
+            return null;
+        }
+
+        return event;
+      },
+    });
+  </script>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT8HLJD"
+          height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script type="text/javascript" charset="utf-8">
+  window.addEventListener('afterprint', function() {
+      $.ajax({
+          type: 'POST',
+          url: '/api/action_trackings/print_screen',
+          data: {
+              current_path: window.location.href
+          }
+      })
+  })
+</script>
+
+
+
+
+<noscript>
+  이 사이트의 기능을 모두 활용하기 위해서는 자바스크립트를 활성화할 필요가 있습니다.
+  <a href="http://www.enable-javascript.com/ko/" target="_blank">
+    브라우저에서 자바스크립트를 활성화하는 방법</a>을 참고하세요.
+</noscript>
+
+
+
+<div id="snackbar-container"></div>
+<script type="text/javascript" id="" charset="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("set","autoConfig",!1,"2050250308523590");fbq("init","2050250308523590");fbq("track","PageView");</script>
+<noscript>
+  <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2050250308523590&amp;ev=PageView&amp;noscript=1">
+</noscript>
+ 
+<script id="" text="" charset="" type="text/javascript" src="./코딩테스트 연습 - OX퀴즈 _ 프로그래머스 스쿨_files/wcslog.js.다운로드"></script> 
+<script type="text/javascript" id="" charset="">if(!wcs_add)var wcs_add={};wcs_add.wa="s_27437e07533e";if(!_nasa)var _nasa={};window.wcs&&(wcs.inflow(),wcs_do(_nasa));</script>
+<span class="l_i5EsjouXtAuDljBvb_" data-v-owner="4" style="display: none; --73e74ee9: 79.390625px; --08fec4f3: 1845.5px; --7ecc3b78: 0px; --5ab76a44: 0px; --1c810162: rotate(-90deg);">설정<span class="Qj4XW89ySDaP3BIxiEb7"></span></span>
+<script type="text/javascript" id="" charset="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("set","autoConfig",!1,"2050250308523590");fbq("init","2050250308523590");fbq("track","PageView");</script>
+<noscript>
+  <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2050250308523590&amp;ev=PageView&amp;noscript=1">
+</noscript>
+</body></html>

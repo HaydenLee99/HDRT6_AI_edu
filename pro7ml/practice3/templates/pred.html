@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>근무년수에 대한 연봉을 이용한 회귀분석 모델</h2>
+
+    <form method="get" action="/pred">
+        <label for="year">근무년수 : </label>
+        <input type="number" id="year" name="year" placeholder="근무년수를 입력하세요">
+        <button type="submit">확인</button><br>
+        <a href="/">메인 페이지로</a>
+    </form>
+    <br>
+    <form>
+        예상 연봉액 : <b>{{ pred | safe if pred else ''}}</b><br>
+        설명력(R2) : <b>{{ r2 | safe }}</b>%<br>
+        회귀식 : pay={{ slope | safe }}*years + {{ intercept | safe }}
+    </form>
+
+    <h3>직급별 연봉 평균</h3>
+    {{ j_data | safe }}
+</body>
+</html>
