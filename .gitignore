@@ -2,7 +2,6 @@
 .vscode/
 *.zip
 
-clock.py
 cote.py
 
 # Created by https://www.toptal.com/developers/gitignore/api/windows,python,c

@@ -1,4 +1,4 @@
-# 계측정 군집분석
+# 계층적 군집분석
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.cluster.hierarchy import linkage, dendrogram, fcluster
