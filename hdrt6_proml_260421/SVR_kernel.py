@@ -1,9 +1,8 @@
-# Support Vector Regression(SVR) 이희동 
+# Support Vector Regression(SVR)
 
 # kernel : 데이터를 어떤 방식으로 변환해서 직선으로 만들지 
 # linear : 직선 회귀 
 # rbf : 기본 비선형 
-# poly : 다항식
 
 # # C : 규제 강도 (50~200) 
 # 1 : 강한 규제 
@@ -17,6 +16,8 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVR
 from sklearn.model_selection import cross_val_score
+
+np.random.seed(4)
 
 # =========================
 # 1. Load data

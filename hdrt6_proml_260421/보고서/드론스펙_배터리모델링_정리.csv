@@ -1,0 +1,52 @@
+﻿구분,항목,값,단위,설명,보고서용 문장
+드론모델,기체 모델명,iris_with_standoffs_battery / iris_with_ardupilot,,Gazebo 본체 모델 + ArduPilot 래퍼 모델,"본 연구에서는 Gazebo Sim 상의 iris_with_standoffs_battery 모델을 실제 기체 본체로 사용하고, iris_with_ardupilot 래퍼 모델을 통해 ArduPilot SITL과 연동하였다."
+드론모델,기체 형식,Quadcopter,,4로터 멀티콥터,본 시뮬레이션 기체는 4개의 로터를 갖는 일반적인 쿼드콥터 형식으로 구성하였다.
+기체스펙,본체 질량(base_link),1.5,kg,기체 본체 질량,기체 본체의 기준 질량은 1.5 kg으로 설정하였다.
+기체스펙,IMU 링크 질량,0.15,kg,imu_link 질량,IMU가 탑재된 imu_link의 질량은 0.15 kg으로 설정하였다.
+기체스펙,로터 질량(각),0.025,kg,4개 로터 각각의 질량,각 로터의 질량은 0.025 kg으로 동일하게 설정하였다.
+관성,본체 Ixx,0.008,kg·m²,base_link inertia,본체 관성모멘트는 Ixx=0.008 kg·m²로 설정하였다.
+관성,본체 Iyy,0.015,kg·m²,base_link inertia,본체 관성모멘트는 Iyy=0.015 kg·m²로 설정하였다.
+관성,본체 Izz,0.017,kg·m²,base_link inertia,본체 관성모멘트는 Izz=0.017 kg·m²로 설정하였다.
+로터배치,Rotor 0 위치,0.13 -0.22 0.023,m,기체 기준 좌표,"Rotor 0은 기체 기준 좌표계에서 (0.13, -0.22, 0.023) m 위치에 배치하였다."
+로터배치,Rotor 1 위치,-0.13 0.20 0.023,m,기체 기준 좌표,"Rotor 1은 기체 기준 좌표계에서 (-0.13, 0.20, 0.023) m 위치에 배치하였다."
+로터배치,Rotor 2 위치,0.13 0.22 0.023,m,기체 기준 좌표,"Rotor 2는 기체 기준 좌표계에서 (0.13, 0.22, 0.023) m 위치에 배치하였다."
+로터배치,Rotor 3 위치,-0.13 -0.20 0.023,m,기체 기준 좌표,"Rotor 3은 기체 기준 좌표계에서 (-0.13, -0.20, 0.023) m 위치에 배치하였다."
+로터형상,로터 반경,0.1,m,collision cylinder radius,각 로터는 반경 0.1 m의 원판형 프로펠러로 근사하였다.
+로터형상,로터 두께,0.005,m,collision cylinder length,로터 두께는 0.005 m로 설정하였다.
+센서,IMU,1000,Hz,imu_sensor update_rate,IMU 센서는 1000 Hz 갱신율로 설정하여 자세 및 각속도 정보를 고속으로 취득하도록 구성하였다.
+센서,기압센서,30,Hz,air_pressure_sensor update_rate,기압 센서는 30 Hz로 설정하였다.
+센서,대기속도센서,30,Hz,air_speed_sensor update_rate,대기속도 센서는 30 Hz로 설정하였다.
+센서,고도계,30,Hz,altimeter_sensor update_rate,고도계 센서는 30 Hz로 설정하였다.
+센서,자기계,30,Hz,magnetometer_sensor update_rate,자기계 센서는 30 Hz로 설정하였다.
+센서,GPS/NavSat,30,Hz,navsat_sensor update_rate,위성항법 센서는 30 Hz로 설정하였다.
+ArduPilot연동,FDM 주소,127.0.0.1,,ArduPilot plugin network setting,ArduPilot SITL 연동을 위해 FDM 주소는 127.0.0.1로 설정하였다.
+ArduPilot연동,FDM 입력 포트,9002,,ArduPilot plugin network setting,ArduPilot SITL의 입력 포트는 9002로 설정하였다.
+ArduPilot연동,FDM 출력 포트,9003,,ArduPilot plugin network setting,ArduPilot SITL의 출력 포트는 9003으로 설정하였다.
+ArduPilot연동,IMU 참조명,iris_with_standoffs::imu_link::imu_sensor,,ArduPilot plugin IMU source,ArduPilot 플러그인은 iris_with_standoffs::imu_link::imu_sensor를 IMU 참조원으로 사용하였다.
+제어,제어 채널 수,4,,4개 로터 제어,4개의 제어 채널을 사용하여 각 로터를 독립적으로 제어하였다.
+제어,제어 방식,VELOCITY,,rotor joint control type,각 로터는 VELOCITY 방식으로 제어되도록 구성하였다.
+제어,servo_min,1100,,모든 채널 공통,각 로터 채널의 최소 PWM 값은 1100으로 설정하였다.
+제어,servo_max,1900,,모든 채널 공통,각 로터 채널의 최대 PWM 값은 1900으로 설정하였다.
+제어,p_gain,0.20,,모든 채널 공통,속도 제어를 위한 비례 이득은 0.20으로 설정하였다.
+제어,cmd_min,-2.5,,모든 채널 공통,명령 하한은 -2.5로 설정하였다.
+제어,cmd_max,2.5,,모든 채널 공통,명령 상한은 2.5로 설정하였다.
+제어,채널0 multiplier,838,,rotor_0_joint,채널 0의 로터 속도 스케일은 838로 설정하였다.
+제어,채널1 multiplier,838,,rotor_1_joint,채널 1의 로터 속도 스케일은 838로 설정하였다.
+제어,채널2 multiplier,-838,,rotor_2_joint,채널 2의 로터 속도 스케일은 -838로 설정하였다.
+제어,채널3 multiplier,-838,,rotor_3_joint,채널 3의 로터 속도 스케일은 -838로 설정하였다.
+배터리모델링,배터리 모델,LinearBatteryPlugin,,Gazebo Sim system plugin,배터리 소모량 생성에는 Gazebo Sim의 LinearBatteryPlugin을 사용하였다.
+배터리모델링,배터리 이름,linear_battery,,battery_name,배터리 식별자는 linear_battery로 설정하였다.
+배터리모델링,정격 전압,11.1,V,3S LiPo nominal voltage 가정,정격 전압은 11.1 V로 설정하여 3S LiPo 배터리를 가정하였다.
+배터리모델링,완전충전 전압,12.6,V,open_circuit_voltage_constant_coef,완전충전 상태의 개방전압은 12.6 V로 설정하였다.
+배터리모델링,무충전 시 전압 감소계수,-2.7,V,open_circuit_voltage_linear_coef,충전량이 감소함에 따라 전압이 선형적으로 감소하도록 계수를 -2.7로 설정하였다.
+배터리모델링,용량,3.5,Ah,capacity,배터리 용량은 3.5 Ah로 설정하였다.
+배터리모델링,초기 충전량,3.5,Ah,initial_charge,초기 충전량을 3.5 Ah로 두어 시뮬레이션 시작 시 100% 상태에서 출발하도록 하였다.
+배터리모델링,내부 저항,0.02,Ω,resistance,배터리 내부 저항은 0.02 Ω으로 설정하였다.
+배터리모델링,전류 smoothing 계수,1.0,,smooth_current_tau,전류 변화가 과도하게 튀지 않도록 smoothing 계수를 1.0으로 설정하였다.
+배터리모델링,평균 소비전력,200.0,W,power_load,평균 소비전력은 200 W로 가정하였다.
+배터리모델링,방전 시작,true,,start_draining,시뮬레이션 시작과 동시에 배터리 방전이 시작되도록 설정하였다.
+배터리모델링,충전 허용,false,,enable_recharge,충전 기능은 비활성화하여 방전만 고려하였다.
+배터리모델링,legacy drain 보정,true,,fix_issue_225,legacy drain 동작에 따른 비정상적인 과소/과대 방전을 방지하기 위해 보정 옵션을 활성화하였다.
+배터리모델링,이론적 런타임 식,runtime = (capacity × voltage) / power_load,hours,Gazebo 공식 계산식,이론적 배터리 런타임은 runtime = (capacity × voltage) / power_load 식으로 계산하였다.
+배터리모델링,이론적 런타임 계산,(3.5 × 11.1) / 200 = 0.19425 h ≈ 11.7 min,h / min,설정값 대입 결과,"설정한 값들을 대입하면 이론적 배터리 런타임은 약 0.19425시간, 즉 약 11.7분으로 계산된다."
+배터리모델링,보고서용 요약문,"3S LiPo(11.1V, 3.5Ah)를 가정하고 평균 소비전력 200W를 적용한 LinearBatteryPlugin 기반 배터리 모델을 사용하였다. Gazebo 공식 식 runtime=(capacity×voltage)/power_load를 적용하면 이론적 런타임은 약 11.7분이다.",,바로 보고서 본문에 붙여넣기용,"3S LiPo(11.1V, 3.5Ah)를 가정하고 평균 소비전력 200W를 적용한 LinearBatteryPlugin 기반 배터리 모델을 사용하였다. Gazebo 공식 식 runtime=(capacity×voltage)/power_load를 적용하면 이론적 런타임은 약 11.7분이다."
